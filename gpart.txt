@@ -1,0 +1,12 @@
+=>       40  976770976  ada0  GPT  (466G)
+         40     524288     1  freebsd-swap  (256M)
+     524328      16384     2  freebsd-ufs  (8.0M)
+     540712   20971520     3  freebsd-ufs  (10G)
+   21512232  955258784     4  freebsd-ufs  (456G)
+
+=>       40  976770976  ada1  GPT  (466G)
+         40     524288     1  freebsd-swap  (256M)
+     524328      16384     2  freebsd-ufs  (8.0M)
+     540712   20971520     3  freebsd-ufs  (10G)
+   21512232  955258784     4  freebsd-ufs  (456G)
+

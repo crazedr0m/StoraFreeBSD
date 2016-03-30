@@ -60,12 +60,12 @@ device iicbus
 device ds133x
 
 device gpio
-#device gpioc
+#device gpioc  #try in FreeBSD 11.x
 device gpioled
 device gpioiic
 
 # NAND flash
-#device          nand
+device          nand
 
 # Flattened Device Tree
 device          fdt
@@ -75,11 +75,6 @@ makeoptions     FDT_DTS_FILE=stora.dts
 
 options		PROCFS
 options		PSEUDOFS
-
-#options         NFSCL                   # NFS Client
-#options         NFSLOCKD                # Network Lock Manager
-#options         NFSSERVER
-#options         NFSD
 
 options         GEOM_PART_GPT           # GPT-разметка
 options         GEOM_PART_BSD
