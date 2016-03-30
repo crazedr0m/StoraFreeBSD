@@ -2,7 +2,7 @@ include         "../mv/kirkwood/std.db88f6xxx"
 options         SOC_MV_KIRKWOOD
 
 # Перечислены опции, которые нужно собрать отдельными модулями, должно быть одной строкой
-makeoptions     MODULES_OVERRIDE="crypto nfscommon nfslock nfssvc nfsd nfscl nand nandfs geom/geom_zero geom/geom_eli geom/geom_mbr tmpfs nullfs procfs md usb/uplcom usb/udav"
+#makeoptions     MODULES_OVERRIDE="crypto nfscommon nfslock nfssvc nfsd nfscl nand nandfs geom/geom_zero geom/geom_eli geom/geom_mbr tmpfs nullfs procfs md usb/uplcom usb/udav"
 makeoptions     WERROR="-Werror"
 
 options         SCHED_4BSD              # Планировщик, нужен
@@ -76,11 +76,10 @@ makeoptions     FDT_DTS_FILE=stora.dts
 options		PROCFS
 options		PSEUDOFS
 
-options         NFSCL                   # NFS Client
-options         NFSLOCKD                # Network Lock Manager
-options         NFSSERVER
-options         NFSLOCKD
-options         NFSD
+#options         NFSCL                   # NFS Client
+#options         NFSLOCKD                # Network Lock Manager
+#options         NFSSERVER
+#options         NFSD
 
 options         GEOM_PART_GPT           # GPT-разметка
 options         GEOM_PART_BSD
