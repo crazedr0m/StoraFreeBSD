@@ -1,0 +1,19 @@
+ident           STORA-NFS
+
+include         STORA-COMMON
+
+options        NFS
+options        NFS_DEBUG
+options        NFS_ROOT
+options        BOOTP
+options        BOOTP_NFSROOT
+options        BOOTP_COMPAT
+
+# Enable these options for nfs root configured via BOOTP.
+#options        BOOTP
+#options        BOOTP_NFSROOT
+#options        BOOTP_NFSV3
+#options        BOOTP_WIRED_TO=mge0
+
+# If not using BOOTP, use something like one of these...
+options        ROOTDEVNAME=\"nfs:192.168.5.7/stora\"

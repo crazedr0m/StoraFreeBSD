@@ -1,0 +1,77 @@
+include         "../mv/kirkwood/std.db88f6xxx"
+options         SOC_MV_KIRKWOOD
+
+# Перечислены опции, которые нужно собрать отдельными модулями, должно быть одной строкой
+#makeoptions     MODULES_OVERRIDE="crypto nfscommon nfslock nfssvc nfsd nfscl nand nandfs geom/geom_zero geom/geom_eli geom/geom_mbr tmpfs nullfs procfs md usb/uplcom usb/udav"
+makeoptions     WERROR="-Werror"
+
+options         SCHED_4BSD              # Планировщик, нужен
+options         FFS                     # UFS
+options         SOFTUPDATES             # Softupdates в FFS
+
+options         SYSVSHM                 # SYSV-style shared memory
+options         SYSVMSG                 # SYSV-style message queues
+options         SYSVSEM                 # SYSV-style semaphores
+options         _KPOSIX_PRIORITY_SCHEDULING # Posix P1003_1B real-time extensions
+options         MUTEX_NOINLINE
+options         RWLOCK_NOINLINE
+options         SX_NOINLINE
+options         NO_FFS_SNAPSHOT
+options         NO_SWAPPING
+
+options         INCLUDE_CONFIG_FILE
+
+# Pseudo devices
+device          loop
+device          random
+device          md
+
+# Serial ports
+device          uart
+
+# Networking
+device          ether
+device          mge
+device          mii
+device          e1000phy
+device          bpf
+options         INET
+options         TCP_OFFLOAD
+
+# SATA
+device          mvs
+device          ahci
+
+# USB
+device          usb
+device          ehci
+device          umass
+device          scbus
+device          pass
+device          da
+
+device          udav
+
+device pci
+
+device iic
+device iicbb
+device iicbus
+device ds133x
+
+device gpio
+device gpioled
+device gpioiic
+device gpiopower
+
+# NAND flash
+device          nand
+
+# Flattened Device Tree
+device          fdt
+options         FDT
+options         FDT_DTB_STATIC
+makeoptions     FDT_DTS_FILE=stora.dts
+
+options		PROCFS
+options		PSEUDOFS

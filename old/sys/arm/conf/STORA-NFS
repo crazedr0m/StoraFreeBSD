@@ -1,0 +1,14 @@
+ident           STORA-NFS
+
+include         STORA-COMMON
+
+options        NFS
+options        NFS_DEBUG
+options        NFS_ROOT
+options        BOOTP
+options        BOOTP_NFSROOT
+options        BOOTP_COMPAT
+
+#BOOTP_WIRED_TO=fxp0
+
+options         ROOTDEVNAME=\"ufs:/dev/mirror/gm0\"
