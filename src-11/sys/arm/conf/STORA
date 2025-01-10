@@ -1,9 +1,17 @@
+#
+# Custom kernel for Marvell DB-88F6xxx boards.
+#
+# $FreeBSD$
+#
+
+ident		STORA
 include         "../mv/kirkwood/std.db88f6xxx"
 options         SOC_MV_KIRKWOOD
 
 # Перечислены опции, которые нужно собрать отдельными модулями, должно быть одной строкой
 #makeoptions     MODULES_OVERRIDE=""
-#makeoptions     MODULES_OVERRIDE="crypto nfscommon nfslock nfssvc nfsd nfscl nand nandfs geom/geom_zero geom/geom_eli geom/geom_mbr tmpfs nullfs procfs md usb/uplcom usb/udav"
+makeoptions     MODULES_OVERRIDE="crypto nfscommon nfslock nfssvc nfsd nfscl nand nandfs geom/geom_zero geom/geom_eli geom/geom_mbr tmpfs nullfs procfs md usb/uplcom usb/udav"
+makeoptions     DEBUG=-g		# Build kernel with gdb(1) debug symbols
 makeoptions     WERROR="-Werror"
 
 options         SCHED_4BSD              # Планировщик, нужен
@@ -27,8 +35,8 @@ options         COMPAT_FREEBSD10
 
 # Pseudo devices
 device          loop
-device          random
 device          md
+device		random
 
 # Serial ports
 device          uart
@@ -48,6 +56,7 @@ device          mvs
 device          ahci
 
 # USB
+options 	USB_DEBUG		# enable debug msgs
 device          usb
 device          ehci
 device          umass
@@ -77,7 +86,7 @@ device ds133x
 device          fdt
 options         FDT
 options         FDT_DTB_STATIC
-makeoptions     FDT_DTS_FILE=/tank/src/conf/stora.dts
+makeoptions     FDT_DTS_FILE=stora.dts
 
 options		PROCFS
 options		PSEUDOFS

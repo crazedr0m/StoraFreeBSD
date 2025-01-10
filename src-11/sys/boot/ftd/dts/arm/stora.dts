@@ -9,10 +9,10 @@
         aliases {
                 ethernet0 = &enet0;
                 mpp = &MPP;
+                pci0 = &pci0;
                 serial0 = &serial0;
                 serial1 = &serial1;
                 soc = &SOC;
-                pci0 = &pci0;
                 sram = &SRAM;
         };
 
@@ -75,7 +75,6 @@
                 
         };
 
-
         SOC: soc88f6281@f1000000 {
                 #address-cells = <1>;
                 #size-cells = <1>;
@@ -113,20 +112,20 @@
                                  5 1            /* ++MPP[ 5]: NF_IO[7] */
                                  6 1            /* ++MPP[ 6]: SYSRST_OUTn */
                                  7 2            /* MPP[ 7]: GPO[7] */
-                                 8 1            /* ++MPP[ 8]: TW_SDA */
-                                 9 1            /* ++MPP[ 9]: TW_SCK */
-                                10 3            /* ++MPP[10]: UA0_TXD */
-                                11 3            /* ++MPP[11]: UA0_RXD */
-                                12 1            /* ++MPP[12]: SD_CLK */
-                                13 1            /* ++MPP[13]: SD_CMD */
-                                14 1            /* ++MPP[14]: SD_D[0] */
-                                15 1            /* ++MPP[15]: SD_D[1] */
-                                16 1            /* ++MPP[16]: SD_D[2] */
-                                17 1            /* ++MPP[17]: SD_D[3] */
-                                18 1            /* ++MPP[18]: NF_IO[0] */
-                                19 1            /* ++MPP[19]: NF_IO[1] */
-                                20 4            /* MPP[20]: GE1[ 0] */
-                                21 4            /* MPP[21]: GE1[ 1] */
+                                 8 1            /* MPP[ 8]: TW_SDA */
+                                 9 1            /* MPP[ 9]: TW_SCK */
+                                10 3            /* MPP[10]: UA0_TXD */
+                                11 3            /* MPP[11]: UA0_RXD */
+                                12 1            /* MPP[12]: SD_CLK */
+                                13 1            /* MPP[13]: SD_CMD */
+                                14 1            /* MPP[14]: SD_D[0] */
+                                15 1            /* MPP[15]: SD_D[1] */
+                                16 1            /* MPP[16]: SD_D[2] */
+                                17 1            /* MPP[17]: SD_D[3] */
+                                18 1            /* MPP[18]: NF_IO[0] */
+                                19 1            /* MPP[19]: NF_IO[1] */
+                                20 5            /* MPP[20]: SATA1_AC */
+                                21 5            /* MPP[21]: SATA0_AC */
                                 22 2            /* MPP[22]: GE1[ 2] */
                                 23 2            /* MPP[23]: GE1[ 3] */
                                 24 3            /* MPP[24]: GE1[ 4] */
@@ -163,30 +162,11 @@
                         #gpio-cells = <3>;
                         compatible = "mrvl,gpio";
                         reg = <0x10100 0x20>;
-                        ngpios = <50>;
                         gpio-controller;
                         interrupts = <35 36 37 38 39 40 41>;
                         interrupt-parent = <&PIC>;
                 };
 
-		leds {
-			compatible = "gpio-leds";
-
-			hdd0blue {
-				label = "hdd0blue";
-				gpios = <&GPIO 20 0>;
-
-				/* Don't change this - it configures
-				 * how the led driver determines if
-				 * the led is on or off when it loads.
-				 */
-				default-state = "keep";
-
-				/* This is the real default state. */
-				linux,default-trigger = "default-on";
-			};
-		};
-		
                 rtc@10300 {
                         compatible = "mrvl,rtc";
                         reg = <0x10300 0x08>;
