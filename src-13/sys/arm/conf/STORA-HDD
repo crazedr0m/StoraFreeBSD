@@ -1,0 +1,14 @@
+ident           STORA-HDD
+
+include         STORA-COMMON
+options         ROOTDEVNAME=\"ufs:/dev/mirror/gm0\"
+
+options         GEOM_PART_GPT           # GPT-разметка
+options         GEOM_PART_BSD
+options         GEOM_PART_BSD64
+options         GEOM_PART_MBR
+options         GEOM_LABEL              # Дисковые метки
+#options         GEOM_AES
+options         GEOM_BDE
+options         GEOM_MIRROR
+options         GEOM_STRIPE
