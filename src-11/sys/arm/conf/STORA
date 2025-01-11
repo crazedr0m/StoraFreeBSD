@@ -4,14 +4,14 @@
 # $FreeBSD$
 #
 
-ident		STORA
+ident           STORA
 include         "../mv/kirkwood/std.db88f6xxx"
 options         SOC_MV_KIRKWOOD
 
 # Перечислены опции, которые нужно собрать отдельными модулями, должно быть одной строкой
 #makeoptions     MODULES_OVERRIDE=""
 makeoptions     MODULES_OVERRIDE="crypto nfscommon nfslock nfssvc nfsd nfscl nand nandfs geom/geom_zero geom/geom_eli geom/geom_mbr tmpfs nullfs procfs md usb/uplcom usb/udav"
-makeoptions     DEBUG=-g		# Build kernel with gdb(1) debug symbols
+makeoptions     DEBUG=-g  # Build kernel with gdb(1) debug symbols
 makeoptions     WERROR="-Werror"
 
 options         SCHED_4BSD              # Планировщик, нужен
@@ -32,14 +32,13 @@ options         NO_SWAPPING
 options         INCLUDE_CONFIG_FILE
 options         COMPAT_FREEBSD10
 
-
 # Pseudo devices
-device          loop
-device          md
-device		random
+device    loop
+device    md
+device    random
 
 # Serial ports
-device          uart
+device    uart
 
 # Networking
 device          ether
@@ -56,7 +55,7 @@ device          mvs
 device          ahci
 
 # USB
-options 	USB_DEBUG		# enable debug msgs
+options         USB_DEBUG		# enable debug msgs
 device          usb
 device          ehci
 device          umass
@@ -88,8 +87,8 @@ options         FDT
 options         FDT_DTB_STATIC
 makeoptions     FDT_DTS_FILE=stora.dts
 
-options		PROCFS
-options		PSEUDOFS
+options         PROCFS
+options         PSEUDOFS
 
 options         GEOM_PART_GPT           # GPT-разметка
 options         GEOM_PART_BSD
