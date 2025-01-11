@@ -1,5 +1,0 @@
-ident           STORA-USB
-
-include         STORA
-options         USB_DEBUG
-options         ROOTDEVNAME=\"ufs:/dev/da0s2a\"

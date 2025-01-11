@@ -1,4 +1,0 @@
-ident           STORA-HDD
-
-include         STORA
-options         ROOTDEVNAME=\"ufs:/dev/mirror/gm0\"

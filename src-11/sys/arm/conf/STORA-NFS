@@ -1,6 +1,6 @@
 ident           STORA-NFS
 
-include         ../../../../conf/STORA
+include         STORA
 
 # Включаем эти опции для загрузки через DHCP и NFS
 options         NFSCL                   # NFS Client
