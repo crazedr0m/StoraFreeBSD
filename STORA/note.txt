@@ -1,0 +1,1 @@
+crossdev --init-target arm-kirkwood_softfloat-linux-gnueabi
