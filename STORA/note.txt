@@ -1,6 +1,6 @@
 Marvell Kirkwood 88F6281
 
- ARMv5TE 
+ARMv5TE 
 
 crossdev --init-target arm-kirkwood_softfloat-linux-gnueabi
 
@@ -11,3 +11,5 @@ https://wiki.gentoo.org/wiki/Embedded_Handbook/Boards/Marvell_Sheevaplug
 https://web.archive.org/web/20150329115458/https://dev.gentoo.org/~armin76/arm/sheevaplug/install.xml
 https://wiki.gentoo.org/wiki/DreamPlug
 https://wiki.gentoo.org/wiki/Project:ARM
+
+ dtc -I dtb -O dts <путь_к_dtb_файлу> -o <путь_к_результирующему_dts_файлу>
