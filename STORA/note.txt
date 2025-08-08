@@ -1,5 +1,7 @@
 Marvell Kirkwood 88F6281
 
+ ARMv5TE 
+
 crossdev --init-target arm-kirkwood_softfloat-linux-gnueabi
 
 https://wiki.gentoo.org/wiki/Crossdev#Crossdev_overlay
